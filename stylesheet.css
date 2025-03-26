@@ -1,0 +1,208 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.jacquard-24-regular {
+    font-family: "Jacquard 24", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+.navbar{
+    background-color: rgba(0, 0, 0, 0.445);
+    color: white;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    z-index: 9999;
+    top: 0;
+    bottom: 0;
+    border-bottom: 1px solid rgba(31, 22, 22, 0.8);
+}
+.navbar a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px;
+}
+.navbar .navbar_logo{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    z-index: 1;
+
+}
+.navbar .navbar_links{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin-left: auto;
+    font-family: "Jacquard 24", system-ui;
+    font-weight: 300;
+    font-style: normal;
+}
+.home_main{
+    position: relative;
+    height: 100vh;
+    overflow: hidden;   
+    overflow: hidden;
+}
+.plain{
+    position: absolute;
+    width: 2000px;
+    z-index: 1;
+    top:calc(50%);
+    left:calc(50%);
+    transform: translate(-50%, -50%);
+}
+.cloud{
+    position: absolute;
+    width: 2500px;
+    z-index: 1;
+    top:calc(50% + 190px);
+    left:calc(50%);
+    transform: translate(-50%, -50%);
+}
+.base1{
+    position: absolute;
+    width: 2450px;
+    z-index: 2;
+    top:calc(50% - 60px);
+    left:calc(50%);
+    transform: translate(-50%, -50%);
+}
+.basewitree{
+    position: absolute;
+    width: 2400px;
+    z-index: 3;
+    top:calc(50% - 50px);
+    left:calc(50%);
+    transform: translate(-50%, -50%);
+}
+.Game_name{
+    position: absolute;
+    z-index: 4;
+    top:calc(50% - 100px);
+    left:calc(50% - 200px);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: "Jacquard 24", system-ui;
+    font-weight: 300;
+    font-style: normal;
+    text-transform: uppercase;
+    color: rgb(61, 56, 56);
+    h2{
+        font-size: 6.5rem;
+        font-weight: 300;
+        line-height: 0.88;
+    }
+    h1{
+        font-size: 3.5rem;
+        font-weight: 600;
+        line-height: .88;
+    }
+}
+.vignette{
+    position: absolute;
+    z-index: 100;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.7) 100%);
+}
+.tree{
+    position: absolute;
+    width: 1400px;
+    z-index: 4;
+    top:calc(50% + 290px);
+    left:calc(50% + 600px);
+    transform: translate(-50%, -50%);
+}
+.tree1{
+    position: absolute;
+    width: 800px;
+    z-index: 5;
+    top:calc(50% + 290px);
+    left:calc(50% - 300px);
+    transform: translate(-50%, -50%);
+}
+.tree2{
+    position: absolute;
+    width: 1000px;
+    z-index: 6;
+    top:calc(50% + 290px);
+    left:calc(50% - 600px);
+    transform: translate(-50%, -50%);
+}
+.bigtree{
+    position: absolute;
+    width: 2200px;
+    z-index: 7;
+    top:calc(50% + 190px);
+    left:calc(50% + 900px);
+    transform: translate(-50%, -50%);
+}
+.bigtree1{
+    position: absolute;
+    width: 1800px;
+    z-index: 8;
+    top:calc(50% + 190px);
+    left:calc(50% - 700px);
+    transform: translate(-50%, -50%);
+}
+.bigtree2{
+    position: absolute;
+    width: 1600px;
+    z-index: 9;
+    top:calc(50% + 190px);
+    left:calc(50% + 300px);
+    transform: translate(-50%, -50%);
+}
+.bush{
+    position: absolute;
+    width: 1200px;
+    z-index: 10;
+    top:calc(50% + 440px);
+    left:calc(50% + 300px);
+    transform: translate(-50%, -50%);
+}
+.bush1{
+    position: absolute;
+    width: 1000px;
+    z-index: 11;
+    top:calc(50% + 450px);
+    left:calc(50% - 700px);
+    transform: translate(-50%, -50%);
+}
+.bush2{
+    position: absolute;
+    width: 1600px;
+    z-index: 12;
+    top:calc(50% + 490px);
+    left:calc(50% - 300px);
+    transform: translate(-50%, -50%);
+}
+.Bbush{
+    position: absolute;
+    width: 1400px;
+    z-index: 13;
+    top:calc(50% + 430px);
+    left:calc(50% + 800px);
+    transform: translate(-50%, -50%);
+}
+.Bbush1{
+    position: absolute;
+    width: 1600px;
+    z-index: 14;
+    top:calc(50% + 430px);
+    left:calc(50% + 600px);
+    transform: translate(-50%, -50%);
+}
+.paralex{
+    pointer-events: none;
+    transition: 0.45s cubic-bezier(0.2, 0.49, 0.32, 0.99);
+    transform: translate(-50%, -50%);
+}
