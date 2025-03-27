@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register - Kuyen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jacquard+12&family=Jacquard+24&family=Jersey+10&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./stylesheet.css" />
+  <style>
+    .register_main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: url('./Resources/back3.png') no-repeat center center/cover;
+    }
+    .register_container {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 2rem;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+      width: 320px;
+      text-align: center;
+      font-family: 'Jacquard 24', sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      color: #fff;
+    }
+    .register_container h2 {
+      margin-bottom: 1rem;
+    }
+    .form-group {
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 0.5rem;
+      border: none;
+      border-radius: 3px;
+    }
+    .registerButton {
+      width: 100%;
+      padding: 0.7rem;
+      background-color: #00aa00;
+      border: 2px solid #000;
+      font-family: 'Press Start 2P', monospace;
+      text-transform: uppercase;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .registerButton:active {
+      background-color: #008800;
+      transform: translateY(2px);
+    }
+    .register_container p {
+      margin-top: 1rem;
+    }
+    .register_container a {
+      color: #00aa00;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <nav class="navbar_logo">
+      <a href="https://pyre-studios.itch.io/" target="_blank"><i class="fa-brands fa-itch-io"></i></a>
+      <a href="mailto:12rhushikeshgulve@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://x.com/GulaveRhushi" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+      <a href="https://youtube.com/@pyrestudios?si=YMo7hRMeb19S1jmH" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+      <a href="https://store.steampowered.com" target="_blank"><i class="fa-brands fa-steam-square"></i></a>
+    </nav>
+    <nav class="navbar_links">
+      <a href="index.html">Home</a>
+      <a href="#">Contact</a>
+      <a href="#">About</a>
+      <a href="#">Preorder</a>
+    </nav>
+  </nav>
+
+  <div class="Character_wallL">
+    <img src="./Resources/Wallside_KG_1.png" alt="wallslide" class="wallslide pixelart">
+  </div>
+  <div class="demon_idelFmove">
+    <img src="./Resources/Fairy 1.png" alt="Fairy" class="idelFmove pixelart">
+  </div>
+
+  <main class="register_main">
+    <div class="register_container">
+      <h2>Register</h2>
+      <form id="registerForm" action="dashboard.html" method="post">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required />
+        </div>
+        <div class="form-group">
+          <label for="regEmail">Email:</label>
+          <input type="email" id="regEmail" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="regPassword">Password:</label>
+          <input type="password" id="regPassword" name="password" required />
+        </div>
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password:</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" required />
+        </div>
+        <button type="submit" class="registerButton">Register</button>
+      </form>
+      <p>Already have an account? <a href="login.html">Login here</a></p>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById("registerForm").addEventListener("submit", function (event) {
+      var username = document.getElementById("username").value.trim();
+      var email = document.getElementById("regEmail").value.trim();
+      var password = document.getElementById("regPassword").value.trim();
+      var confirmPassword = document.getElementById("confirmPassword").value.trim();
+
+      if (username === "" || email === "" || password === "" || confirmPassword === "") {
+        alert("Please fill in all fields.");
+        event.preventDefault();
+        return;
+      }
+      if (password.length < 6) {
+        alert("Password must be at least 6 characters long.");
+        event.preventDefault();
+        return;
+      }
+      
+      if (password !== confirmPassword) {
+        alert("Passwords do not match.");
+        event.preventDefault();
+        return;
+      }
+      localStorage.setItem("loggedInUser", username);
+    });
+  </script>
+</body>
+</html>

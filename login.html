@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Kuyen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jacquard+12&family=Jacquard+24&family=Jersey+10&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./stylesheet.css" />
+  <style>
+    .login_main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: url('./Resources/test.png') no-repeat center center/cover;
+    }
+    .login_container {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 2rem;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+      width: 320px;
+      text-align: center;
+      font-family: 'Jacquard 24', sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      color: #fff;
+    }
+    .login_container h2 {
+      margin-bottom: 1rem;
+    }
+    .form-group {
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 0.5rem;
+      border: none;
+      border-radius: 3px;
+    }
+    .loginButton {
+      width: 100%;
+      padding: 0.7rem;
+      background-color: #00aa00;
+      border: 2px solid #000;
+      font-family: 'Press Start 2P', monospace;
+      text-transform: uppercase;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .loginButton:active {
+      background-color: #008800;
+      transform: translateY(2px);
+    }
+    .login_container p {
+      margin-top: 1rem;
+    }
+    .login_container a {
+      color: #00aa00;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <nav class="navbar_logo">
+      <a href="https://pyre-studios.itch.io/" target="_blank"><i class="fa-brands fa-itch-io"></i></a>
+      <a href="mailto:12rhushikeshgulve@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://x.com/GulaveRhushi" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+      <a href="https://youtube.com/@pyrestudios?si=YMo7hRMeb19S1jmH" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+      <a href="https://store.steampowered.com" target="_blank"><i class="fa-brands fa-steam-square"></i></a>
+    </nav>
+    <nav class="navbar_links">
+      <a href="index.html">Home</a>
+      <a href="#">Contact</a>
+      <a href="#">About</a>
+      <a href="#">Preorder</a>
+    </nav>
+  </nav>
+
+  <main class="login_main">
+    <div class="login_container">
+      <h2>Login</h2>
+      <form id="loginForm" action="dashboard.html" method="post">
+        <div class="form-group">
+          <label for="loginEmail">Email:</label>
+          <input type="email" id="loginEmail" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="loginPassword">Password:</label>
+          <input type="password" id="loginPassword" name="password" required />
+        </div>
+        <button type="submit" class="loginButton">Login</button>
+      </form>
+      <p>Don't have an account? <a href="register.html">Register here</a></p>
+    </div>
+  </main>
+  
+  <div class="demon_idelF1">
+    <img src="./Resources/Fairy 3.png" alt="Fairy" class="idelF pixelart">
+  </div>
+  <div class="Character_wall">
+    <img src="./Resources/Wallside_KG_1.png" alt="Wall Slide" class="wallslide pixelart">
+  </div>
+  
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function (event) {
+      var email = document.getElementById("loginEmail").value.trim();
+      var password = document.getElementById("loginPassword").value.trim();
+      
+      if (email === "" || password === "") {
+        alert("Please fill in all fields.");
+        event.preventDefault();
+        return;
+      }
+      
+      localStorage.setItem("loggedInUser", email);
+    });
+  </script>
+</body>
+</html>
