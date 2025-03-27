@@ -15,3 +15,30 @@ window.addEventListener('mousemove', (e) => {
     });
 
 })
+
+const track = document.querySelector('.carousel-track');
+const images = Array.from(track.children);
+const nextButton = document.querySelector('.next');
+const prevButton = document.querySelector('.prev');
+let currentIndex = 0;
+
+function moveToIndex(index) {
+currentIndex = index;
+track.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+nextButton.addEventListener('click', () => {
+let newIndex = (currentIndex + 1) % images.length;
+moveToIndex(newIndex);
+});
+
+prevButton.addEventListener('click', () => {
+let newIndex = (currentIndex - 1 + images.length) % images.length;
+moveToIndex(newIndex);
+});
+
+// Auto carousel: advance every 3 seconds (3000ms)
+setInterval(() => {
+let newIndex = (currentIndex + 1) % images.length;
+moveToIndex(newIndex);
+}, 3000);
