@@ -3,11 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-.jacquard-24-regular {
-    font-family: "Jacquard 24", system-ui;
-    font-weight: 400;
-    font-style: normal;
-  }
+body::-webkit-scrollbar{
+    display: none;
+}
 .navbar{
     background-color: rgba(0, 0, 0, 0.445);
     color: white;
@@ -39,14 +37,13 @@
     justify-content: right;
     align-items: center;
     margin-left: auto;
-    font-family: "Jacquard 24", system-ui;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 300;
     font-style: normal;
 }
 .home_main{
     position: relative;
     height: 100vh;
-    overflow: hidden;   
     overflow: hidden;
 }
 .plain{
@@ -88,7 +85,7 @@
     left:calc(50% - 200px);
     transform: translate(-50%, -50%);
     text-align: center;
-    font-family: "Jacquard 24", system-ui;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 300;
     font-style: normal;
     text-transform: uppercase;
@@ -205,4 +202,144 @@
     pointer-events: none;
     transition: 0.45s cubic-bezier(0.2, 0.49, 0.32, 0.99);
     transform: translate(-50%, -50%);
+}
+.background{
+    position: absolute ;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.video{
+    position: absolute;
+    background-color: black;
+    width: 650px;
+    height: 450px;
+    left: 9%;
+    top: 25%;
+    z-index: 5;
+}
+.boxpage{
+    position: absolute;
+    width: 800px;
+    height: 600px;
+    top: 150px;
+    left: 5%;
+    z-index: 2;
+}
+.boxpageinfo{
+    position: absolute;
+    width: 400px;
+    height: 700px;
+    top: 300px;
+    left: 53%;
+    z-index: 2;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+}
+.infoboxpage{
+    position: absolute;
+    width: 650px;
+    height: 650px;
+    top: 150px;
+    left: 45%;
+    z-index: 1;
+}
+.header{
+    position: absolute;
+    width: 800px;
+    height: 400px;
+    top: -200px;
+    left: 30%;
+    z-index: 101;
+    animation: appear ease-in-out;
+    animation-timeline: view();
+    animation-range: entry 0 cover 60%;
+}
+
+@keyframes appear{
+    from{
+        opacity: 0;
+        scale: .5;
+        transform: translateY(300px);
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+        transform: translateY(0px);
+    }
+}
+.clouds{
+    position: absolute;
+    width: 800px;
+    height: 400px;
+    top: -250px;
+    left: -50px;
+    z-index: 100;
+    animation: appearCloudsP ease-in-out;
+    animation-timeline: view();
+    animation-range: entry 0 cover 60%;
+}
+.clouds1{
+    position: absolute;
+    width: 800px;
+    height: 400px;
+    top: -250px;
+    left: 60%;
+    z-index: 100;
+    animation: appearCloudsN ease-in-out;
+    animation-timeline: view();
+    animation-range: entry 0 cover 60%;
+}
+@keyframes appearCloudsP{
+    from{
+        opacity: 0;
+        scale: .5;
+        transform: translateX(-1300px);
+        
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+        transform: translateX(0px);
+    }
+}
+@keyframes appearCloudsN{
+    from{
+        opacity: 0;
+        scale: .5;
+        transform: translateX(1300px);
+        
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+        transform: translateX(0px);
+    }
+}
+.youtube{
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.story img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.combat img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+}
+.biomes img{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    object-fit: cover;
 }
