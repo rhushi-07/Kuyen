@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login - Kuyen</title>
+  <title>Contact - Kuyen</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Jacquard+12&family=Jacquard+24&family=Jersey+10&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet" />
@@ -12,26 +12,25 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./stylesheet.css" />
   <style>
-    .login_main {
+    .contact_main {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      background: url('./Resources/test.png') no-repeat center center/cover;
+      min-height: 100vh;
+      background: url('./Resources/back1.jpg') no-repeat center center/cover;
+      padding: 20px;
     }
-    .login_container {
+    .contact_container {
       background: rgba(0, 0, 0, 0.6);
       padding: 2rem;
       border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-      width: 320px;
-      text-align: center;
-      font-family: 'Jacquard 24', sans-serif;
-      font-weight: 400;
-      font-size: 20px;
+      width: 400px;
       color: #fff;
+      font-family: 'Jacquard 24', sans-serif;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
     }
-    .login_container h2 {
+    .contact_container h2 {
+      text-align: center;
       margin-bottom: 1rem;
     }
     .form-group {
@@ -42,13 +41,14 @@
       display: block;
       margin-bottom: 0.3rem;
     }
-    .form-group input {
+    .form-group input,
+    .form-group textarea {
       width: 100%;
       padding: 0.5rem;
       border: none;
       border-radius: 3px;
     }
-    .loginButton {
+    .contactButton {
       width: 100%;
       padding: 0.7rem;
       background-color: #00aa00;
@@ -58,17 +58,11 @@
       color: #fff;
       cursor: pointer;
       transition: background 0.2s, transform 0.1s;
-    }
-    .loginButton:active {
-      background-color: #008800;
-      transform: translateY(2px);
-    }
-    .login_container p {
       margin-top: 1rem;
     }
-    .login_container a {
-      color: #00aa00;
-      text-decoration: underline;
+    .contactButton:active {
+      background-color: #008800;
+      transform: translateY(2px);
     }
   </style>
 </head>
@@ -91,58 +85,59 @@
     </nav>
   </nav>
 
-  <main class="login_main">
-    <div class="login_container">
-      <h2>Login</h2>
-      <form id="loginForm" action="dashboard.html" method="post">
+  <main class="contact_main">
+    <div class="contact_container">
+      <h2>Contact Us</h2>
+      <form id="contactForm" action="#" method="post">
         <div class="form-group">
-          <label for="loginEmail">Email:</label>
-          <input type="email" id="loginEmail" name="email" required />
+          <label for="contactName">Name:</label>
+          <input type="text" id="contactName" name="name" required />
         </div>
         <div class="form-group">
-          <label for="loginPassword">Password:</label>
-          <input type="password" id="loginPassword" name="password" required />
+          <label for="contactEmail">Email:</label>
+          <input type="email" id="contactEmail" name="email" required />
         </div>
-        <button type="submit" class="loginButton">Login</button>
+        <div class="form-group">
+          <label for="contactSubject">Subject:</label>
+          <input type="text" id="contactSubject" name="subject" required />
+        </div>
+        <div class="form-group">
+          <label for="contactMessage">Message:</label>
+          <textarea id="contactMessage" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="contactButton">Send Message</button>
       </form>
-      <p>Don't have an account? <a href="register.html">Register here</a></p>
     </div>
   </main>
-  
-  <div class="demon_idelF1">
-    <img src="./Resources/Fairy 3.png" alt="Fairy" class="idelF pixelart">
-  </div>
-  <div class="Character_wall">
-    <img src="./Resources/Wallside_KG_1.png" alt="Wall Slide" class="wallslide pixelart">
-  </div>
-  
+  <div class="demon_idel">
+    <img src="./Resources/demon-idle.png" alt="idel" class="idel pixelart">
+    </div>
+    <div class="Character_wallL">
+        <img src="./Resources/Wallside_KG_1.png" alt="wallslide " class="wallslide pixelart">
+    </div>
+    <div class="demon_idelF2">
+        <img src="./Resources/Fairy 3.png" alt="idel" class="idelF pixelart">
+    </div>
+    
+
   <script>
-    document.getElementById("loginForm").addEventListener("submit", function (event) {
-      event.preventDefault(); 
-  
-      var email = document.getElementById("loginEmail").value.trim();
-      var password = document.getElementById("loginPassword").value.trim();
+    document.getElementById("contactForm").addEventListener("submit", function (event) {
+      event.preventDefault();
       
-      if (email === "" || password === "") {
+      var name = document.getElementById("contactName").value.trim();
+      var email = document.getElementById("contactEmail").value.trim();
+      var subject = document.getElementById("contactSubject").value.trim();
+      var message = document.getElementById("contactMessage").value.trim();
+      
+      if (name === "" || email === "" || subject === "" || message === "") {
         alert("Please fill in all fields.");
         return;
       }
       
-      var storedUser = localStorage.getItem("registeredUser");
-      if (!storedUser) {
-        alert("No registered user found. Please register first.");
-        return;
-      }
+      alert("Thank you for contacting us, " + name + "! We will get back to you shortly.");
       
-      var userData = JSON.parse(storedUser);
-      if (email === userData.email && password === userData.password) {
-        localStorage.setItem("loggedInUser", email);
-        window.location.href = "index.html"; 
-      } else {
-        alert("Invalid email or password.");
-      }
+      document.getElementById("contactForm").reset();
     });
   </script>
-  
 </body>
 </html>

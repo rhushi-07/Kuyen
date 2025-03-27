@@ -37,7 +37,6 @@ let newIndex = (currentIndex - 1 + images.length) % images.length;
 moveToIndex(newIndex);
 });
 
-// Auto carousel: advance every 3 seconds (3000ms)
 setInterval(() => {
 let newIndex = (currentIndex + 1) % images.length;
 moveToIndex(newIndex);
@@ -48,18 +47,13 @@ document.addEventListener("DOMContentLoaded", function() {
     var preorderBtn = document.getElementById("preorderBtn");
   
     preorderBtn.addEventListener("click", function(event) {
-      // Check if the user is logged in
       var loggedInUser = localStorage.getItem("loggedInUser");
       
       if (!loggedInUser) {
-        // If not logged in, alert the user and redirect to login page
         alert("You must be logged in to preorder!");
         window.location.href = "login.html";
       } else {
-        // If logged in, process the preorder and show a success popup
-        // In a real application, this is where you would send a request to your backend.
         alert("Preorder successful! Thank you for your purchase, " + loggedInUser + "!");
-        // Optionally, you can clear or update the state in localStorage here.
       }
     });
   });

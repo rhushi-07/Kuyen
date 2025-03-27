@@ -82,10 +82,12 @@
       <a href="https://store.steampowered.com" target="_blank"><i class="fa-brands fa-steam-square"></i></a>
     </nav>
     <nav class="navbar_links">
-      <a href="index.html">Home</a>
-      <a href="#">Contact</a>
-      <a href="#">About</a>
-      <a href="#">Preorder</a>
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+        <a href="#Story">About</a>
+        <a href="#Preorder">Preorder</a>
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
     </nav>
   </nav>
 
@@ -124,29 +126,43 @@
 
   <script>
     document.getElementById("registerForm").addEventListener("submit", function (event) {
+      event.preventDefault(); 
+      
       var username = document.getElementById("username").value.trim();
       var email = document.getElementById("regEmail").value.trim();
       var password = document.getElementById("regPassword").value.trim();
       var confirmPassword = document.getElementById("confirmPassword").value.trim();
-
+  
       if (username === "" || email === "" || password === "" || confirmPassword === "") {
         alert("Please fill in all fields.");
-        event.preventDefault();
         return;
       }
+      
       if (password.length < 6) {
         alert("Password must be at least 6 characters long.");
-        event.preventDefault();
         return;
       }
       
       if (password !== confirmPassword) {
         alert("Passwords do not match.");
-        event.preventDefault();
         return;
       }
-      localStorage.setItem("loggedInUser", username);
+      
+      var userData = {
+        username: username,
+        email: email,
+        password: password
+      };
+      
+      localStorage.setItem("registeredUser", JSON.stringify(userData));
+      
+      localStorage.setItem("loggedInUser", email);
+      
+      alert("Registration successful! You are now logged in.");
+      
+      window.location.href = "index.html";
     });
   </script>
+  
 </body>
 </html>
