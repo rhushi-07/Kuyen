@@ -120,21 +120,21 @@
     document.getElementById("loginForm").addEventListener("submit", function (event) {
       event.preventDefault(); 
       
-      var email = document.getElementById("loginEmail").value.trim();
-      var password = document.getElementById("loginPassword").value.trim();
+      let email = document.getElementById("loginEmail").value.trim();
+      let password = document.getElementById("loginPassword").value.trim();
       
       if (email === "" || password === "") {
         alert("Please fill in all fields.");
         return;
       }
       
-      var storedUser = localStorage.getItem("registeredUser");
+      let storedUser = localStorage.getItem("registeredUser");
       if (!storedUser) {
         alert("No registered user found. Please register first.");
         return;
       }
       
-      var userData = JSON.parse(storedUser);
+      let userData = JSON.parse(storedUser);
       if (email === userData.email && password === userData.password) {
         localStorage.setItem("loggedInUser", email);
         window.location.href = "index.html"; 

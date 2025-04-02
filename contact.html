@@ -124,10 +124,10 @@
     document.getElementById("contactForm").addEventListener("submit", function (event) {
       event.preventDefault();
       
-      var name = document.getElementById("contactName").value.trim();
-      var email = document.getElementById("contactEmail").value.trim();
-      var subject = document.getElementById("contactSubject").value.trim();
-      var message = document.getElementById("contactMessage").value.trim();
+      let name = document.getElementById("contactName").value.trim();
+      let email = document.getElementById("contactEmail").value.trim();
+      let subject = document.getElementById("contactSubject").value.trim();
+      let message = document.getElementById("contactMessage").value.trim();
       
       if (name === "" || email === "" || subject === "" || message === "") {
         alert("Please fill in all fields.");

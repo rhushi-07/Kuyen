@@ -128,10 +128,10 @@
     document.getElementById("registerForm").addEventListener("submit", function (event) {
       event.preventDefault(); 
       
-      var username = document.getElementById("username").value.trim();
-      var email = document.getElementById("regEmail").value.trim();
-      var password = document.getElementById("regPassword").value.trim();
-      var confirmPassword = document.getElementById("confirmPassword").value.trim();
+      let username = document.getElementById("username").value.trim();
+      let email = document.getElementById("regEmail").value.trim();
+      let password = document.getElementById("regPassword").value.trim();
+      let confirmPassword = document.getElementById("confirmPassword").value.trim();
   
       if (username === "" || email === "" || password === "" || confirmPassword === "") {
         alert("Please fill in all fields.");
@@ -148,7 +148,7 @@
         return;
       }
       
-      var userData = {
+      let userData = {
         username: username,
         email: email,
         password: password
